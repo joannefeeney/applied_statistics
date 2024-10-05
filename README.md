@@ -1,14 +1,15 @@
 # Applied Statistics
 ## By Joanne Feeney
 *******************************
+## All 4 tasks will be completed in `tasks.ipynb` and labelled accordingly.
 
-## Task 1
+### Task 1: Permutations and Combinations
 
-## Task 2
+### Task 2: numpy's Normal Distribution
 
-## Task 3
+### Task 3: t-Test Calculation
 
-## Task 4
+### Task 4: ANOVA
 
 *******************************
 
