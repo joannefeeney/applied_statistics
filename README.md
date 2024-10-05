@@ -1,7 +1,9 @@
 # Applied Statistics
 ## By Joanne Feeney
 *******************************
-## All 4 tasks will be completed in `tasks.ipynb` and labelled accordingly.
+## Tasks
+
+All 4 tasks will be completed in `tasks.ipynb` and labelled accordingly.
 
 ### Task 1: Permutations and Combinations
 
