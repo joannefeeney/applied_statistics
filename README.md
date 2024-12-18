@@ -1,97 +1,69 @@
-# Applied Statistics
-## By Joanne Feeney
+# Applied Statistics - By Joanne Feeney
 
 ## Introduction
+This repository contains my work for the "Applied Statistics" module, taught by ATU Galway. The repository includes two Jupyter notebooks and a folder containing datasets used throughout the course:
 
-This repository was created for my work on the "Applied Statistics" module, taught by ATU Galway.
+- **Notebooks:**
+  - `tasks.ipynb` – contains solutions to four tasks related to statistical analysis.
+  - `project.ipynb` – contains a final project where I analyze the "PlantGrowth" dataset using statistical methods.
 
-It contains two Jupyter notebooks titled `tasks.ipynb` & `project.ipynb` and a folder titled `datasets`, which contains all the datasets used for these notebooks.
+- **Folder:**
+  - `datasets/` – contains all the datasets used in the notebooks.
 
-All the work that I have completed was done so on Visual Studio Code. I would recommend that this editor is used by anyone viewing the notebooks in this repository.
+All work was completed using **Visual Studio Code**. I recommend using this editor for optimal experience with the notebooks.
 
-Some of the tasks and the project were created with the help of Github Co-Pilot: https://github.com/features/copilot
+Some tasks and the project were assisted by **GitHub Co-Pilot**:
+[GitHub Co-Pilot](https://github.com/features/copilot)
 
 ## Tasks
 
-All 4 tasks are completed in `tasks.ipynb` and labelled accordingly.
+The following tasks are completed in `tasks.ipynb`:
 
 ### Task 1: Permutations and Combinations
+This task modifies the Lady Tasting Tea experiment to involve twelve cups of tea. The goal is to calculate the probability that a person can correctly identify six cups with milk in them.
 
-**Altering the Lady Tasting Tea experiment to involve twelve cups of tea.**
-
-I calculate, using Python, the probability that a person (assuming they have no special powers) select the correct six cups which had milk in first.
-
-I then investigate if I am willing to accept one error (i.e. the person will guess five of the six cups correctly). 
-
-I calculate the probability that the person makes one error and then the difference if I allow for two errors.
-
-My conclusion is that I would not accept two errors as the probability that the person guesses correctly increases dramatically.
+- **Analysis:** I calculate the probability of selecting the correct six cups, and then test how the probability changes when allowing for one or two errors.
+- **Conclusion:** I conclude that allowing for two errors significantly increases the probability of guessing correctly, making it less likely for me to accept such errors.
 
 ### Task 2: numpy's Normal Distribution
+In this task, I test if `numpy.random.normal()` generates values that properly follow a normal distribution.
 
-**Assessing whether numpy.random.normal() properly generates normal values.**
-
-I generate a sample of one hundred thousand values with mean 10.0 and standard deviation 3.0.
-
-I use the scipy.stats.shapiro() function to test whether the created sample came from a normal distribution.
-
-I use a histogram & q-q plot to assist in visualising the sample data.
-
-I plot a histogram of the values and the corresponding normal distribution probability density function on top of it.
-
-My results suggest that numpy.random.normal() appears to properly generate normal values.
+- **Method:** I generate 100,000 random values with a mean of 10 and standard deviation of 3. Then, I use `scipy.stats.shapiro()` to test for normality and visualize the distribution with a histogram and Q-Q plot.
+- **Conclusion:** My analysis shows that `numpy.random.normal()` generates values that closely follow a normal distribution.
 
 ### Task 3: t-Test Calculation
+This task involves calculating the t-statistic for a dataset containing resting heart rates of patients before and after a two-week exercise program.
 
-**Calculating the t-statistic of a provided dataset containing resting heart rates for patients before and after embarking on a two-week exercise program.**
-
-I use the help of a stripplot and a boxplot to visualise the data.
-
-I perform a t-test and calculate the t-statistic on this dataset, using Python. 
-
-I compare it to the value given by scipy.stats. 
-
-The t-statstics vs. scipy.stats t-test result shows that both display the same value and probability.
+- **Method:** I visualize the data using strip and box plots, then perform a t-test using Python and compare my result to the value obtained from `scipy.stats`.
+- **Conclusion:** The t-statistics from my calculations and `scipy.stats` match, confirming the validity of the t-test.
 
 ### Task 4: ANOVA
+This task estimates the probability of committing a Type II error in an ANOVA test.
 
-**Estimating the probability of committing a type II error in specific circumstances.**
+- **Method:** I generate three samples with slightly different means (4.9, 5.0, and 5.1) using `numpy.random.normal()`. I perform one-way ANOVA 10,000 times and track the occurrence of Type II errors.
+- **Conclusion:** I conclude that the probability of committing a Type II error is 0%, as the differences in means are adequately detectable.
 
-I create a variable called `no_type_ii` and set it to 0.
+## Project: PlantGrowth Analysis
 
-I use numpy.random.normal to generate three samples with 100 values each. Each has a standard deviation of 0.1. The means are 4.9, 5.0 and 5.1.
+The project in `project.ipynb` focuses on analyzing the **PlantGrowth** dataset from R.
 
-I perform one-way anova on the three samples and add 1 to `no_type_ii` whenever a type II error occurs.
+- **Dataset:** The dataset contains two variables:
+  - `group`: The treatment group (e.g., ctrl, trt1, trt2).
+  - `weight`: The weight of plants in each group.
 
-I use a loop to perform the test 10,000 times.
+### Objectives:
+- Perform **t-tests** and **ANOVA** to analyze the significance of differences between plant groups.
+- Describe the dataset, the statistical methods used, and the assumptions made.
 
-In conclusion I am rejecting the (false) null hypothesis for this test. The probability of committing a type II error is 0%.
+### Key Steps:
+1. **Data Download:** The dataset was downloaded and saved to the repository.
+2. **t-Test:** I performed a t-test to check if there’s a significant difference between two treatment groups, `trt1` and `trt2`.
+3. **ANOVA:** I performed ANOVA to check for significant differences between the three groups: `ctrl`, `trt1`, and `trt2`.
+4. **Reasoning:** I explain why ANOVA is more appropriate than multiple t-tests when analyzing more than two groups.
 
-The means of the three samples are adequately different.
+### Conclusion:
+The results from both the t-test and ANOVA reveal significant differences between the groups, with ANOVA being the more appropriate test for comparing multiple groups.
 
-*******************************
+## Conclusion
 
-## Project
-
-My project code is in a file called `project.ipynb`.
-
-In this project, I analyze the [PlantGrowth R dataset](https://vincentarelbundock.github.io/Rdatasets/csv/datasets/PlantGrowth.csv).
-
-The dataset contains two main variables, a treatment group and the weight of plants within those groups.
-
-I perform t-tests and ANOVA on this dataset while describing the dataset and explaining my work.
-
-
-I have successfully:
-
-1. Downloaded and saved the dataset to my repository.
-
-2. Described the dataset in the above notebook.
-
-3. Described what a t-test is, how it works, and what my assumptions are.
-
-3. Performed a t-test to determine whether there is a significant difference between the two treatment groups `trt1` and `trt2`.
-
-4. Performed ANOVA to determine whether there is a significant difference between the three treatment groups `ctrl`, `trt1`, and `trt2`.
-
-5. Explained why it is more appropriate to apply ANOVA rather than several t-tests when analyzing more than two groups.
+This repository demonstrates various statistical methods, including permutations, normal distributions, t-tests, and ANOVA, through practical exercises and a final project. It provides both the Python code used and detailed explanations of the underlying statistical concepts.
